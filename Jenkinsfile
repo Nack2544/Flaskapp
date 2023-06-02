@@ -12,15 +12,15 @@ pipeline {
       }
     }
 
-    stage('Build ') {
-      steps {
-        sh 'docker build -t nack2529/flask_app .'
-      }
-    }
-
     stage('Docker login') {
       steps {
         sh 'docker login -u nack2529 -p dckr_pat_E6B0GlwBxSXQ5zqMhkHobitCzCk'
+      }
+    }
+
+    stage('Docker Build') {
+      steps {
+        sh 'docker build -t nack2529/flask_app .'
       }
     }
 
