@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "Nack2544/flask_app"
+    registry = "nack2544/flask_app"
     registryCredentials = "docker"
     cluster_name = "skillstorm"
   }
@@ -15,7 +15,7 @@ pipeline {
   stages {
     stage('Git') {
       steps {
-        git(url: 'https://github.com/bran12v/flasking.git', branch: 'main')
+        git(url: 'https://github.com/Nack2544/Flaskapp.git', branch: 'main')
       }
     }
 
