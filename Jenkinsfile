@@ -42,14 +42,14 @@ pipeline {
           sh "aws eks --region us-east-1 update-kubeconfig --name ${cluster_name}"
           script {
             try {
-              sh "kubectl create namespace ${namespace}"
+              sh "kubectl create nack2529 ${nack2529}"
             }
             catch (Exception e) {
-              echo "Error / namespace already created"
+              echo "Error / nack2529 already created"
             }
           }
-          sh "kubectl apply -f ./deployment.yaml -n ${namespace}"
-          sh "kubectl -n ${namespace} rollout restart deployment flaskcontainer"
+          sh "kubectl apply -f ./deployment.yaml -n ${nack2529}"
+          sh "kubectl -n ${nack2529} rollout restart deployment flaskcontainer"
         }
       }
     }
