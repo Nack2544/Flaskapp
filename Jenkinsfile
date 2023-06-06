@@ -1,11 +1,11 @@
 pipeline {
 
       environment {
-        registry = "Nack2520/flask_app"
+        registry = "nack2529/flask_app"
         registryCredentialas = "docker"
         cluster_name = "skillstorm"
     }
-    
+
   agent {
     node {
       label 'docker'
