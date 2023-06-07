@@ -1,28 +1,28 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
-  name:  flaskcontainer 
-  namespace: valeriedarling 
+  name:  nack2529flask
+  namespace: bran12v
   labels: 
-    app:  flaskcontainer 
+    app:  nack2529flask 
 spec: 
   selector: 
     matchLabels: 
-      app: flaskcontainer 
+      app: nack2529flask 
   replicas: 1 
   strategy: 
     rollingUpdate: 
       maxSurge: 25% 
       maxUnavailable: 25% 
-    type: RollingUpdate 
+    type: RollingUpdate
   template: 
     metadata: 
       labels: 
-        app:  flaskcontainer 
+        app:  nack2529flask 
     spec: 
       containers: 
-      - name:  flaskcontainer 
-        image:  valeriedarling/flask_app 
+      - name:  nack2529flask 
+        image:  bran12v/flask_app 
         resources: 
           requests: 
             cpu: 100m 
@@ -32,7 +32,7 @@ spec:
             memory: 100Mi 
         ports: 
         - containerPort:  5000 
-          name:  flaskcontainer 
+          name:  nack2529flask 
         imagePullPolicy: Always 
       restartPolicy: Always 
  
@@ -40,18 +40,18 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata: 
-  name: flaskcontainer 
-  namespace: valeriedarling 
+  name: nack2529flask 
+  namespace: bran12v
 spec: 
   selector: 
-    app: flaskcontainer 
+    app: nack2529flask 
   type: LoadBalancer 
   sessionAffinity: None 
   sessionAffinityConfig: 
     clientIP: 
       timeoutSeconds: 10800 
   ports: 
-  - name: flaskcontainer 
+  - name: nack2529flask 
     protocol: TCP 
     port: 80 
     targetPort: 5000 
