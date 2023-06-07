@@ -1,14 +1,14 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
-  name:  nack2529flask
+  name:  nackFlask
   namespace: bran12v
   labels: 
-    app:  nack2529flask 
+    app:  nackFlask 
 spec: 
   selector: 
     matchLabels: 
-      app: nack2529flask 
+      app: nackFlask 
   replicas: 1 
   strategy: 
     rollingUpdate: 
@@ -18,10 +18,10 @@ spec:
   template: 
     metadata: 
       labels: 
-        app:  nack2529flask 
+        app:  nackFlask 
     spec: 
       containers: 
-      - name:  nack2529flask 
+      - name:  nackFlask 
         image:  bran12v/flask_app 
         resources: 
           requests: 
@@ -32,7 +32,7 @@ spec:
             memory: 100Mi 
         ports: 
         - containerPort:  5000 
-          name:  nack2529flask 
+          name:  nackFlask 
         imagePullPolicy: Always 
       restartPolicy: Always 
  
@@ -40,18 +40,18 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata: 
-  name: nack2529flask 
+  name: nackFlask 
   namespace: bran12v
 spec: 
   selector: 
-    app: nack2529flask 
+    app: nackFlask 
   type: LoadBalancer 
   sessionAffinity: None 
   sessionAffinityConfig: 
     clientIP: 
       timeoutSeconds: 10800 
   ports: 
-  - name: nack2529flask 
+  - name: nackFlask 
     protocol: TCP 
     port: 80 
     targetPort: 5000 
