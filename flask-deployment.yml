@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment 
 metadata: 
   name:  nackFlask
-  namespace: bran12v
+  namespace: nack2529
   labels: 
     app:  nackFlask 
 spec: 
@@ -22,7 +22,7 @@ spec:
     spec: 
       containers: 
       - name:  nackFlask 
-        image:  bran12v/flask_app 
+        image:  nack2529/flask_app 
         resources: 
           requests: 
             cpu: 100m 
@@ -41,7 +41,7 @@ apiVersion: v1
 kind: Service 
 metadata: 
   name: nackFlask 
-  namespace: bran12v
+  namespace: nack2529
 spec: 
   selector: 
     app: nackFlask 

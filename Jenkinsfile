@@ -4,7 +4,9 @@ pipeline {
     registry = "nack2529/flask_app"
     registryCredentials = "docker"
     cluster_name = "skillstorm"
+    namespace = "nack2529"
   }
+
 
   agent {
     node {
@@ -51,7 +53,7 @@ pipeline {
           sh "kubectl apply -f deployment.yaml -n ${namespace}"
           sh "kubectl -n ${namespace} rollout restart deployment nackFlask"
         }
-      }
+      
     }
   }
 }
