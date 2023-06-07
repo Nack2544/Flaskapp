@@ -4,7 +4,7 @@ pipeline {
     registry = "nack2529/flask_app"
     registryCredentials = "docker"
     cluster_name = "skillstorm"
-    namespace = "nack2529"
+    name = "nack2529"
   }
 
   agent {
